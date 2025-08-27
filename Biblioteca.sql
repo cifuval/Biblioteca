@@ -41,7 +41,7 @@ CONSTRAINT fk_Autor_Id_Pais foreign key (Id_Pais) references Pais(Id)
  Id int identity not null,
  CONSTRAINT pk_Documento_Id primary key (Id),
  Tipo varchar (20) not null,
- Titulo varchar (30) not null,
+ Titulo varchar (100) not null,
  Año int not null ,
  Id_Editorial int not null,
  Paginas int not null ,
@@ -50,14 +50,14 @@ CONSTRAINT fk_Autor_Id_Pais foreign key (Id_Pais) references Pais(Id)
  
 --- Create table Libro
 create table Libro (
-id int not null,
+Id int not null,
 CONSTRAINT fk_Libro_Id foreign key (Id) references Documento(Id),
 Edicion int not null ,
 ISBN varchar(13) UNIQUE
 )
 
 --- Create table Documiento_Seriado
-create table Documiento_Seriado(
+create table Documento_Seriado(
 Id int not null,
 CONSTRAINT fk_Documento_Seriado_Id foreign key (Id) references Documento(Id),
 Volumen int,
